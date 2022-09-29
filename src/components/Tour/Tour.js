@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from '../Header/Header';
 import './Tour.css'
 
 const Tour = () => {
     return (
         <div className='tour-container'>
             <div>
-                <h2>tour plan</h2>
+                <Header></Header>
             </div>
             <div>
                 <h2>tour details</h2>
