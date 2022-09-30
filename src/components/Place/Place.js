@@ -13,8 +13,8 @@ const Place = ({ place, handleChoosePlace }) => {
           Need <strong> {timeRequired} day/days </strong>to explore this place
         </p>
       </div>
-      <button onClick={() => handleChoosePlace(place)} className="btn-choose">
-        <p>Choose This Place</p>
+      <button  onClick={() => handleChoosePlace(place)} className="btn-choose">
+        <p id="btn-text">Choose This Place</p>
       </button>
     </div>
   );
