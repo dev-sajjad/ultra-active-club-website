@@ -27,6 +27,13 @@
     background-color:  #eaffee;
 }
 
+.questions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+}
+
 
 @media only screen and (max-width: 1200px) {
     .place-container {
