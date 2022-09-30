@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getSavedDay } from '../../utilities/fakedb';
 import Header from '../Header/Header';
 import Place from '../Place/Place';
 import User from '../User/User';
@@ -14,10 +15,15 @@ const Tour = () => {
       .then((data) => setPlaces(data));
   }, []);
 
+  useEffect(() => {
+    const storedDay = getSavedDay();
+    console.log(storedDay)
+  }, [])
+
   const handleChoosePlace = (addPlace) => {
     const newPlace = [...place, addPlace];
       setPlace(newPlace);
-      
+    addToDb(addPlace.id);
     };
     
   return (

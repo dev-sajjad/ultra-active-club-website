@@ -1,43 +1,43 @@
-// use local storage to manage cart data
+// use local storage to manage tour time data
 const addToDb = (id) => {
-  let shoppingCart = {};
+  let tourTime = {};
 
-  //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  //get the tour time from local storage
+  const storedDay = localStorage.getItem("tour-time");
+  if (storedDay) {
+    tourTime = JSON.parse(storedDay);
   }
 
   // add quantity
-  const quantity = shoppingCart[id];
-  if (quantity) {
-    const newQuantity = quantity + 1;
-    shoppingCart[id] = newQuantity;
+  const day = tourTime[id];
+  if (day) {
+    const newDay = day + 1;
+    tourTime[id] = newDay;
   } else {
-    shoppingCart[id] = 1;
+    tourTime[id] = 1;
   }
-  localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  localStorage.setItem("tour-time", JSON.stringify(tourTime));
 };
 
-const getSavedCart = () => {
-  let shoppingCart = {};
+const getSavedDay = () => {
+  let tourTime = {};
 
   //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  const storedDay = localStorage.getItem("tour-time");
+  if (storedDay) {
+    tourTime = JSON.parse(storedDay);
   }
 
-  return shoppingCart;
+  return tourTime;
 };
 
 const removeFromDb = (id) => {
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    const shoppingCart = JSON.parse(storedCart);
-    if (id in shoppingCart) {
-      delete shoppingCart[id];
-      localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  const storedDay = localStorage.getItem("tour-time");
+  if (storedDay) {
+    const tourTimes = JSON.parse(storedDay);
+    if (id in tourTimes) {
+      delete tourTimes[id];
+      localStorage.setItem("shopping-cart", JSON.stringify(tourTimes));
     }
   }
 };
@@ -48,7 +48,7 @@ const deleteShoppingCart = () => {
 
 export {
   addToDb,
-  getSavedCart,
+  getSavedDay,
   removeFromDb,
   deleteShoppingCart,
 };
