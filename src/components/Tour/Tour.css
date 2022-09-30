@@ -5,5 +5,21 @@
 .place-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 20px;
+    margin: 15px 20px 10px 20px;
+}
+.main-header {
+    margin: 20px 0 30px ;
+}
+.header-title {
+    background-color: #eaffee;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border: 3px outset #78e08f;
+    border-radius: 10px;
+    text-align: center;
+}
+.details-container {
+    background-color:  #eaffee;
 }

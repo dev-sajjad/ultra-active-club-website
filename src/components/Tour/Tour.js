@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import Place from '../Place/Place';
+import User from '../User/User';
 import './Tour.css'
 
 const Tour = () => {
@@ -15,15 +16,18 @@ const Tour = () => {
       <div className="tour-container">
         <div>
           <Header></Header>
-          <h2>Explore Beautiful Places of Sylhet</h2>
-          <div className='place-container'>
+          <div className='main-header'>
+            <h2 className="header-title">Explore Beautiful Places of Sylhet</h2>
+          </div>
+
+          <div className="place-container">
             {places.map((place) => (
               <Place place={place}></Place>
             ))}
           </div>
         </div>
-        <div>
-          <h2>tour details</h2>
+        <div className='details-container'>
+          <User></User>
         </div>
       </div>
     );

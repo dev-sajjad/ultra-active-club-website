@@ -1,4 +1,25 @@
+.place-details {
+    height: 400px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    position: relative;
+    background-color: #eaffee;
+}
 .place-details img {
-    width: 300px;
+    width: 320px;
     height: 150px;
+    margin: 8px;
+    border-radius: 8px;
+}
+.btn-choose {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #b2f7c1;
+    border: none;
+    border-radius: 0 0 8px 8px;
+}
+.btn-choose:hover {
+    background-color: #78e08f;
 }
