@@ -1,5 +1,7 @@
 import React from 'react';
 import img from '../../user-img.png';
+import Break from '../Break/Break';
+import Details from '../Details/Details';
 import './User.css'
 
 const User = () => {
@@ -20,7 +22,9 @@ const User = () => {
                 <p>Age: <br /> <b>25</b> Years</p>
                 <p>Visited(BD): <br /><b>25</b> Districts</p>
                 <p>Visited(Global): <br /><b>5</b> Countries</p>
-        </div>    
+         </div>    
+            <Break></Break> 
+         <Details></Details>   
       </div>
     );
 };

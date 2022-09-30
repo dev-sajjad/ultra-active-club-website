@@ -16,7 +16,7 @@ const Tour = () => {
       <div className="tour-container">
         <div>
           <Header></Header>
-          <div className='main-header'>
+          <div className="main-header">
             <h2 className="header-title">Explore Beautiful Places of Sylhet</h2>
           </div>
 
@@ -26,7 +26,7 @@ const Tour = () => {
             ))}
           </div>
         </div>
-        <div className='details-container'>
+        <div className="details-container">
           <User></User>
         </div>
       </div>

@@ -1,0 +1,29 @@
+.tour-details p {
+    background-color: #d3eed9;
+    margin: 15px 20px;
+    padding: 5px 5px;
+    border-radius: 15px;
+}
+.tour-time {
+    margin-left: 40px;
+    font-weight: bold;
+}
+.break-total {
+    margin-left: 40px;
+    font-weight: bold;
+}
+.btn-execute {
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 80%;
+    background-color: #b2f7c1;
+    border: none;
+    border-radius: 15px;
+}
+.btn-execute:hover {
+    background-color: #78e08f;
+    color: white;
+    
+}

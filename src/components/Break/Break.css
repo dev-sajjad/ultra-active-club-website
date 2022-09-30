@@ -1,0 +1,24 @@
+.add-break {
+    margin: 20px 0;
+}
+.break-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #d3eed9;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.break-time p {
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.break-time p:hover {
+    background-color: #78e08f;
+    color: white;
+}
+
