@@ -1,5 +1,5 @@
 // use local storage to manage tour time data
-const addToDb = (id) => {
+const addToDb = (addedPlace) => {
   let tourTime = {};
 
   //get the tour time from local storage
@@ -8,13 +8,10 @@ const addToDb = (id) => {
     tourTime = JSON.parse(storedDay);
   }
 
-  // add quantity
-  const day = tourTime[id];
-  if (day) {
-    const newDay = day + 1;
-    tourTime[id] = newDay;
-  } else {
-    tourTime[id] = 1;
+  
+  const day = tourTime[addedPlace.id];
+  if (!day) {
+    tourTime[addedPlace.id] = addedPlace.timeRequired;
   }
   localStorage.setItem("tour-time", JSON.stringify(tourTime));
 };

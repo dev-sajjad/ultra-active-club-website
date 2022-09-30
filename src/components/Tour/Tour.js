@@ -7,7 +7,7 @@ import './Tour.css'
 
 const Tour = () => {
   const [places, setPlaces] = useState([]);
-  const [place, setPlace] = useState([]);
+  const [day, setDay] = useState([]);
 
   useEffect(() => {
     fetch("places-data.json")
@@ -17,13 +17,22 @@ const Tour = () => {
 
   useEffect(() => {
     const storedDay = getSavedDay();
-    console.log(storedDay)
-  }, [])
+    const storedSavedDay = [];
+    for (const id in storedDay) {
+      const addedPlace = places.find(singleDay => singleDay.id === id) 
+      if(addedPlace) {
+        const tourTime = storedDay[id];
+        addedPlace.timeRequired = tourTime;
+        storedSavedDay.push(addedPlace);
+      }
+    }
+    setDay(storedSavedDay)
+  }, [places])
 
   const handleChoosePlace = (addPlace) => {
-    const newPlace = [...place, addPlace];
-      setPlace(newPlace);
-    addToDb(addPlace.id);
+    const newPlace = [...day, addPlace];
+      setDay(newPlace);
+    addToDb(addPlace);
     };
     
   return (
@@ -45,7 +54,7 @@ const Tour = () => {
         </div>
       </div>
       <div className="details-container">
-        <User place={place}></User>
+        <User place={day}></User>
       </div>
     </div>
   );

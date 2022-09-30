@@ -3,7 +3,7 @@ import img from '../../user-img.png';
 import './User.css'
 
 const User = ({ place }) => {
-  const [breaks, setBreaks] = useState(0);
+  const [breaks, setBreaks] = useState(1);
 
   
 let total = 0;
@@ -16,17 +16,17 @@ for (const singlePlace of place) {
   for (let button of buttons) {
     button.addEventListener('click', (e) => {
       const buttonValue = parseInt(e.target.innerText)
-      let breakTime = 0;
+      let breakTime = 1;
       if (buttonValue === 1) {
-        breakTime = breakTime + 1;
+        breakTime = breakTime + 0;
       } else if (buttonValue === 2) {
-        breakTime = breakTime + 2;
+        breakTime = breakTime + 1;
       } else if (buttonValue === 3) {
-        breakTime = breakTime + 3;
+        breakTime = breakTime + 2;
       } else if (buttonValue === 4) {
-        breakTime = breakTime + 4;
+        breakTime = breakTime + 3;
       } else if (buttonValue === 5) {
-        breakTime = breakTime + 5;
+        breakTime = breakTime + 4;
       }
       setBreaks(breakTime);
     })
