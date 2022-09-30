@@ -6,12 +6,19 @@ import './Tour.css'
 
 const Tour = () => {
     const [places, setPlaces] = useState([]);
+    const [place, setPlace] = useState([]);
 
     useEffect(() => {
         fetch("places-data.json")
             .then(res => res.json())
             .then(data => setPlaces(data))
-    }, [])
+    }, []) 
+
+    const handleChoosePlace = (addPlace) => {
+        const newPlace = [...place, addPlace]
+        setPlace(newPlace);
+    }
+
     return (
       <div className="tour-container">
         <div>
@@ -22,12 +29,16 @@ const Tour = () => {
 
           <div className="place-container">
             {places.map((place) => (
-              <Place place={place}></Place>
+                <Place
+                    place={place}
+                    key={place.id}
+                    handleChoosePlace = {handleChoosePlace}
+                ></Place>
             ))}
           </div>
         </div>
         <div className="details-container">
-          <User></User>
+          <User place={place}></User>
         </div>
       </div>
     );

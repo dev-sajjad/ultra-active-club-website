@@ -1,7 +1,7 @@
 import React from "react";
 import "./Place.css";
 
-const Place = ({ place }) => {
+const Place = ({ place, handleChoosePlace }) => {
   const { name, timeRequired, distance, picture } = place;
   return (
     <div className="place-details">
@@ -10,10 +10,10 @@ const Place = ({ place }) => {
       <div>
         <h4>Distance from Capital: {distance} km</h4>
         <p>
-          Need <strong>  {timeRequired} day/days </strong>to explore this place
+          Need <strong> {timeRequired} day/days </strong>to explore this place
         </p>
       </div>
-      <button className="btn-choose">
+      <button onClick={() => handleChoosePlace(place)} className="btn-choose">
         <p>Choose This Place</p>
       </button>
     </div>

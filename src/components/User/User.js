@@ -4,7 +4,8 @@ import Break from '../Break/Break';
 import Details from '../Details/Details';
 import './User.css'
 
-const User = () => {
+const User = (props) => {
+    const { place } = props;
     return (
       <div className='user-container'>
         <div className="user-info">
@@ -24,7 +25,7 @@ const User = () => {
                 <p>Visited(Global): <br /><b>5</b> Countries</p>
          </div>    
             <Break></Break> 
-         <Details></Details>   
+         <Details place ={place}></Details>   
       </div>
     );
 };
